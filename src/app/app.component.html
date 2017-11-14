@@ -1,6 +1,16 @@
 <div class="container">
     <app-menu></app-menu>
     <app-contact></app-contact>
+
+<div class="row">
+    <div class="box" *ngFor="let user of users">
+        <h2 *ngIf="user.username !='Varun' else myText">{{ user.username }}</h2>
+        <ng-template #myText>
+            Varun is still working
+        </ng-template>
+        <p>{{ user.description }}.</p>
+    </div> 
+</div>
 </div>
 <!-- <h1>{{ title }} Testing done</h1>
 <app-contact></app-contact> -->
