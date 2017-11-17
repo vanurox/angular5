@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isValid: boolean = false;
+
+  changeBg()
+  {
+    this.isValid = true;
+  }
+
   users = [
     {
       username: "Nugen",
