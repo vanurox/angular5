@@ -7,10 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isValid: boolean = false;
-
-  changeBg()
-  {
+  phoneNumber: String = "8699643192";
+  
+  changeBg() {
     this.isValid = true;
+  }
+
+  newUser(user)
+  {
+    this.users.push(user);
+  }
+
+  deleteUser(id)
+  {
+    this.users.splice(id,1);
   }
 
   users = [
@@ -30,6 +40,6 @@ export class AppComponent {
       username: "Sandeep",
       description: "Learner."
     }
-];
+  ];
   title = 'Nugen Services';
 }

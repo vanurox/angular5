@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-help',
@@ -7,10 +7,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class HelpComponent implements OnInit {
-
+  @Output() addNewUser = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addUser(username: any, description: any){
+    console.log(username.value);
+    let user = {
+      username: username.value,
+      description: description.value
+    };
+    this.addNewUser.emit(user);
   }
 
 }

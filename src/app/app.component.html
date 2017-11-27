@@ -1,7 +1,12 @@
 <div class="container">
     <app-menu></app-menu>
-    <app-contact></app-contact>
-
+    <app-contact [contactInfo]="phoneNumber"></app-contact>
+    <app-help (addNewUser)="newUser($event)"></app-help>
+    <app-users 
+        [users]="users"
+        (deleteUserByIndex)="deleteUser($event)"
+    >
+    </app-users>
 <div class="row">
     <div class="box" [class.mine]="isValid" *ngFor="let user of users">
         <h2 *ngIf="user.username !='Varun' else myText">{{ user.username }}</h2>
