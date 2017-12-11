@@ -1,3 +1,4 @@
+
 <div class="container">
     <app-menu></app-menu>
     <app-contact [contactInfo]="phoneNumber"></app-contact>
@@ -7,6 +8,8 @@
         (deleteUserByIndex)="deleteUser($event)"
     >
     </app-users>
+    <h1>My Info</h1>
+    <app-my-info (deleteUserByIndex)="delUser($event)" [userInfo]="myInfo"></app-my-info>
 <div class="row">
     <div class="box" [class.mine]="isValid" *ngFor="let user of users">
         <h2 *ngIf="user.username !='Varun' else myText">{{ user.username }}</h2>
@@ -17,7 +20,8 @@
     </div> 
 </div>
 <button (click)="changeBg()">Change Background</button>
-</div>
 
+</div>
+    
 <!-- <h1>{{ title }} Testing done</h1>
 <app-contact></app-contact> -->

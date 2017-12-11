@@ -6,21 +6,49 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  private myInfo: any = [
+    {
+      firstName: "Varun",
+      lastName: "Sharma",
+      age: 27
+    },
+    {
+      firstName: "Nugen",
+      lastName: "Services",
+      age: 7
+    },
+    {
+      firstName: "Mohit",
+      lastName: "Chabra",
+      age: 37
+    },
+    {
+      firstName: "Sandeep",
+      lastName: "Kaur",
+      age: 85
+    }
+  ];
+
+
+  delUser(index){
+    this.myInfo.splice(index,1);
+  }
+
+
   isValid: boolean = false;
   phoneNumber: String = "8699643192";
-  
+
   changeBg() {
     this.isValid = true;
   }
 
-  newUser(user)
-  {
+  newUser(user) {
     this.users.push(user);
   }
 
-  deleteUser(id)
-  {
-    this.users.splice(id,1);
+  deleteUser(id) {
+    this.users.splice(id, 1);
   }
 
   users = [
@@ -39,6 +67,14 @@ export class AppComponent {
     {
       username: "Sandeep",
       description: "Learner."
+    },
+    {
+      username: "Extra",
+      description: "Working"
+    },
+    {
+      username: "New One",
+      description: "Done"
     }
   ];
   title = 'Nugen Services';
