@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from "./myService";
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  users: any=[];
+  
+  constructor(private userService: UserService){
+    this.users = this.userService.getUsers();
+  }
 
   private myInfo: any = [
     {
@@ -44,38 +50,13 @@ export class AppComponent {
   }
 
   newUser(user) {
-    this.users.push(user);
+    this.userService.newUser(user);
   }
 
   deleteUser(id) {
-    this.users.splice(id, 1);
+    this.userService.deleteUser(id);
   }
 
-  users = [
-    {
-      username: "Nugen",
-      description: "We provide the quality."
-    },
-    {
-      username: "Varun",
-      description: "CTO."
-    },
-    {
-      username: "Kamal",
-      description: "Learner."
-    },
-    {
-      username: "Sandeep",
-      description: "Learner."
-    },
-    {
-      username: "Extra",
-      description: "Working"
-    },
-    {
-      username: "New One",
-      description: "Done"
-    }
-  ];
+  
   title = 'Nugen Services';
 }

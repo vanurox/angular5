@@ -8,7 +8,7 @@ import { HelpComponent } from './help/help.component';
 import { MenuComponent } from './menu/menu.component';
 import { UsersComponent } from './users/users.component';
 import { MyInfoComponent } from './my-info/my-info.component';
-
+import { UserService } from "./myService";
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { MyInfoComponent } from './my-info/my-info.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
