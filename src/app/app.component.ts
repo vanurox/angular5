@@ -31,7 +31,7 @@ export class AppComponent {
     },
     {
       firstName: "Sandeep",
-      lastName: "Kaur",
+      lastName: "Mahajan",
       age: 85
     }
   ];

@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { UsersComponent } from './users/users.component';
 import { MyInfoComponent } from './my-info/my-info.component';
 import { UserService } from "./myService";
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserService } from "./myService";
     MyInfoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
