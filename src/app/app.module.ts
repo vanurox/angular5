@@ -10,6 +10,9 @@ import { UsersComponent } from './users/users.component';
 import { MyInfoComponent } from './my-info/my-info.component';
 import { UserService } from "./myService";
 import { AppRoutingModule } from './/app-routing.module';
+import { PostsComponent } from './posts/posts.component';
+import { PostService } from './posts/posts.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { AppRoutingModule } from './/app-routing.module';
     HelpComponent,
     MenuComponent,
     UsersComponent,
-    MyInfoComponent
+    MyInfoComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
