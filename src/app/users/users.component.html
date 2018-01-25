@@ -1,6 +1,22 @@
-<h1>users component goes here</h1>
+<!-- <h1>users component goes here</h1> -->
 <!-- <ul>
   <li *ngFor="let user of users; let i = index">
     <strong>{{ user.username }}</strong> | {{ user.description }} <span (click)="deleteUser(i)">Delete</span>
   </li>
 </ul> -->
+
+<form [formGroup]="userFormGroup" novalidate>
+  <input type="text" formControlName="email"> <br>
+  <p *ngIf="userFormGroup.controls.email.errors !== null">Required</p> <br>
+  <input type="text" formControlName="username"> <br>
+  <p>Form status: {{ userFormGroup.status | json }}</p>
+  <button class="btn btn-primary" (click)="showForm()">Show</button>
+</form>
+
+<!-- <form [formGroup]="heroForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+</form> -->

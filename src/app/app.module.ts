@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
@@ -13,6 +13,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './posts/posts.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsService } from './newsService';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [UserService, PostService],
+  providers: [UserService, PostService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

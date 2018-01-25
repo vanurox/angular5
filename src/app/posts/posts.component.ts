@@ -7,7 +7,7 @@ import { PostService } from './posts.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  private posts = [];
+  private posts;
   constructor(private postService: PostService) { }
 
   ngOnInit() {
