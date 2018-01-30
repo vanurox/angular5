@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {  FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { User } from './users.model';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -9,6 +10,7 @@ export class UsersComponent implements OnInit {
   // @Input() users: any;
   // @Output() deleteUserByIndex = new EventEmitter();
   private userFormGroup: FormGroup;
+  private user: User;
 
   constructor(fb: FormBuilder) {
     this.userFormGroup = fb.group({
@@ -25,6 +27,8 @@ export class UsersComponent implements OnInit {
        console.log("yes");
      }
    }
+
+
 
   ngOnInit() {
     
